@@ -1,5 +1,5 @@
 import '../styles/navbar.css';
-import { HashLink as Link } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import LunaLogo from '../assets/LunaLogo.png';
 
 function Navbar() {
@@ -10,22 +10,22 @@ function Navbar() {
       </Link>
       <ul className="navList">
         <li className="dropdown">
-          <Link to="/shop" className="dropbtn">Shop</Link>
+          <span className="dropbtn">Shop</span>
           <div className="dropdown-content">
-            <Link to="/shop">All Products</Link>
-            <Link smooth to="/#preorders">Pre-orders</Link>
+            <a href="https://shop.lunamusic.net/category-s/1858.htm" target="_blank" rel="noopener noreferrer">Turntables</a>
+            <a href="https://shop.lunamusic.net/LUNA-music-gift-cards-s/1477.htm" target="_blank" rel="noopener noreferrer">Gift Cards</a>
             <a href="https://shop.lunamusic.net/LUNA-music-t-shirts-s/1814.htm" target="_blank" rel="noopener noreferrer">T-Shirts</a>
           </div>
         </li>
         <li className="dropdown">
-          <Link smooth to="/#about" className="dropbtn">About</Link>
+          <span className="dropbtn">About</span>
           <div className="dropdown-content">
-            <Link smooth to="/#about">Our Story</Link>
-            <Link smooth to="/#kickingjams">Since '94</Link>
+            <Link to="/about">Our Story</Link>
+            <Link to="/about#kickingjams">Since '94</Link>
           </div>
         </li>
-        <li><Link smooth to="/#we-buy-vinyl">We Buy Vinyl</Link></li>
-        <li><Link smooth to="/#blog">Blog</Link></li>
+        <li><Link to="/we-buy-vinyl">We Buy Vinyl</Link></li>
+        <li><Link to="/blog">Blog</Link></li> 
         <Link to="/contact" className="contact-button">Contact Us</Link>
       </ul>
     </nav>

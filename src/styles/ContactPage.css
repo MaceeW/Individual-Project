@@ -1,0 +1,189 @@
+.contact-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-info-section {
+  text-align: left;
+  color: #333;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.contact-info-section h2 {
+  font-size: 1.8em;
+  color: darkgreen;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info-section h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.contact-info-section p {
+  margin: 0.25rem 0;
+  line-height: 1.4;
+  font-size: 1em;
+}
+
+.contact-info-section a {
+  color: darkgreen;
+  text-decoration: none;
+}
+
+.contact-info-section a:hover {
+  text-decoration: underline;
+}
+
+.contact-form-section {
+  text-align: left;
+  padding-bottom: 2rem;
+}
+
+.contact-form-section h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9em;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.form-name-fields {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-name-fields .form-group {
+  flex: 1;
+}
+
+.form-name-fields label {
+  display: none; 
+}
+
+.form-name-fields .form-group:first-child label {
+  display: block; 
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+  padding: 0.8em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  margin-top: -0.5rem; 
+}
+
+.checkbox-group label {
+  margin: 0;
+  font-size: 1em;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.submit-button {
+  padding: 0.8em 1.5em;
+  font-size: 1.2em;
+  background-color: darkgreen;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start; 
+}
+
+.submit-button:hover {
+  background-color: darkseagreen;
+}
+
+.submission-message {
+  margin-top: 1rem;
+  padding: 1em;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.submission-message.error {
+  color: white;
+  background-color: #ff4d4d;
+}
+
+.submission-message.success {
+  color: white;
+  background-color: darkgreen;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    margin: 1rem auto;
+  }
+
+  .form-name-fields {
+    flex-direction: column;
+  }
+
+  .form-name-fields .form-group:first-child label {
+    display: none; 
+  }
+
+  .form-name-fields .form-group input::placeholder {
+    content: 'First Name (required)';
+  }
+
+  .form-name-fields .form-group:nth-child(2) input::placeholder {
+    content: 'Last Name (required)';
+  }
+}

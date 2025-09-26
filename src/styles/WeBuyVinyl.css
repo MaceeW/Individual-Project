@@ -1,0 +1,179 @@
+.we-buy-vinyl-section {
+  text-align: center;
+  background-color: white; 
+  color: #333; 
+}
+
+.image-container {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/src/assets/shop-interior.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.arch-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; 
+  background-color: white; 
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  transform: translateY(50%) scaleX(1.5);
+}
+
+.slogan-content {
+  max-width: 80vw;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  z-index: 2; 
+}
+
+.slogan-content h1 {
+  font-family: "Futura Oblique", sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.slogan-content .line-one {
+  font-size: clamp(2em, 7vw, 4.2em);
+}
+
+.slogan-content .line-two {
+  font-size: clamp(1.5em, 5vw, 2.8em);
+}
+
+.header-text-content {
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto; 
+}
+
+.sell-vinyl-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: left;
+  background-color: white;
+  color: #333;
+}
+
+.sell-vinyl-container h1.form-title {
+  font-size: 2.2em;
+  margin-bottom: 0.5rem;
+  font-family: inherit; 
+  font-weight: bold;
+}
+
+.sell-vinyl-container p.form-description {
+  font-size: 1em;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.sell-vinyl-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group > label { 
+  font-weight: normal;
+  color: #333;
+  font-size: 1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.form-group > label.required::after {
+    content: ' (required)';
+    color: #555;
+    font-weight: normal;
+}
+
+
+.name-fields {
+  display: flex;
+  gap: 1rem;
+}
+
+.name-fields .input-wrapper {
+  flex: 1;
+}
+
+.name-fields .input-wrapper label {
+  font-weight: normal;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.sell-vinyl-form input[type="text"],
+.sell-vinyl-form input[type="email"],
+.sell-vinyl-form input[type="tel"],
+.sell-vinyl-form textarea {
+  padding: 0.8em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: inherit;
+  margin-top: 0.2rem;
+}
+
+.sell-vinyl-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.radio-group {
+  margin-top: 0.5rem;
+}
+
+.radio-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.radio-group input[type="radio"] {
+  margin-top: 0.2em;
+  margin-right: 0.8rem;
+  transform: scale(1.2);
+}
+
+.sell-vinyl-form button {
+  padding: 0.8em 1.5em;
+  font-size: 1.2em;
+  background-color: darkgreen;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.sell-vinyl-form button:hover {
+  background-color: darkseagreen;
+}
+
+@media (max-width: 600px) {
+  .name-fields {
+    flex-direction: column;
+  }
+}
