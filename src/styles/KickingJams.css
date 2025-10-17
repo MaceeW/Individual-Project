@@ -30,7 +30,7 @@
 
 .kickingjams-text {
   flex: 1.5; 
-  text-align: left;
+  text-align: center;
 }
 
 .kickingjams-text h2 {
@@ -47,18 +47,21 @@
   text-align: center;
 }
 
-.kickingjams-text button {
+.kickingjams-text .button-link {
   margin-top: 2rem;
-  padding: 0.3em 1em;
+  padding: 10px 20px;
   font-size: 1.2em;
   background-color: darkgreen;
   color: white;
   cursor: pointer;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  width: fit-content;
+  margin: 2rem auto 0;
 }
 
-.kickingjams-text button:hover {
+.kickingjams-text .button-link:hover {
   background-color: darkseagreen;
 }

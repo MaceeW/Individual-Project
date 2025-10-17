@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/MusicSub.css';
 import animationGif from '../assets/3d-animation.gif';
 
@@ -14,7 +13,9 @@ const MusicSub = () => {
           <p>
             Each record is lovingly packed & shipped straight to your door! Let the dance party / dinner jams / 3rd eye openers / heady sesh commence.
           </p>
+          <a href="https://www.lunamusic.net/vinyl-subscription" target="_blank" rel="noopener noreferrer" className="musicsub-link">
           <button>Click here for the deets!</button>
+          </a>
         </div>
         <div className="musicsub-image-container">
           <img src={animationGif} alt="3D animation of a record player" />

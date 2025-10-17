@@ -1,10 +1,9 @@
-import React from 'react';
 import '../styles/Geese.css';
 import geeseImage from '../assets/geese.jpg';
 
 const Geese = () => {
   return (
-    <section id="we-buy-vinyl" className="geese-section">
+    <section id="geese-event" className="geese-section">
       <div className="geese-content">
         <div className="geese-text">
           <h2>Geese</h2>
@@ -31,7 +30,9 @@ const Geese = () => {
           </a>
         </div>
       </div>
-      <button>Preorder 'Getting Killed'</button>
+      <a href="https://shop.lunamusic.net/Geese-Getting-Killed-Clear-Vinyl-VINYL-LP-p/5400863188023.htm" target="_blank" rel="noopener noreferrer" className="preorder-link">
+        <button>Preorder 'Getting Killed'</button>
+      </a>
       <div className="geese-arch-overlay"></div>
     </section>
   );

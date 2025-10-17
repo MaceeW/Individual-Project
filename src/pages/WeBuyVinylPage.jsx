@@ -1,64 +1,11 @@
-import React, { useState } from 'react';
 import '../styles/WeBuyVinyl.css'; 
+import { useSellVinylForm } from '../hooks/useSellVinylForm';
 
 const WeBuyVinyl = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    firstName: '',
-    lastName: '',
-    phone: '',
-    recordCount: '',
-    isDamaged: 'No',
-    damageDescription: '',
-    collectionDescription: '',
-    preferredContact: '',
-    bestTimes: '',
-  });
+  const { state, handleChange, handleSubmit } = useSellVinylForm();
+  const { values, submissionMessage } = state;
 
-  const [submissionMessage, setSubmissionMessage] = useState({
-    text: '',
-    isError: false,
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: value,
-    }));
-   
-    if (submissionMessage.text) {
-      setSubmissionMessage({ text: '', isError: false });
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const requiredFields = ['email', 'firstName', 'lastName', 'phone', 'recordCount', 'isDamaged', 'collectionDescription', 'preferredContact'];
-    const isMissingFields = requiredFields.some(field => !formData[field]);
-
-    if (isMissingFields || (formData.isDamaged === 'Yes' && !formData.damageDescription)) {
-      setSubmissionMessage({
-        text: 'Error: All required fields must be filled out.',
-        isError: true,
-      });
-      return;
-    }
-
-    console.log('Sell Vinyl Form Submitted:', formData);
-    setSubmissionMessage({
-      text: 'You have successfully sent your inquiry.',
-      isError: false,
-    });
-  
-    setFormData({
-      email: '', firstName: '', lastName: '', phone: '', recordCount: '',
-      isDamaged: 'No', damageDescription: '', collectionDescription: '',
-      preferredContact: '', bestTimes: '',
-    });
-  };
-
-  const isDamaged = formData.isDamaged === 'Yes';
+  const isDamaged = values.isDamaged === 'Yes';
 
   return (
     <section className="we-buy-vinyl-section">
@@ -84,7 +31,7 @@ const WeBuyVinyl = () => {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
+              value={values.email}
               onChange={handleChange}
             />
           </div>
@@ -96,7 +43,7 @@ const WeBuyVinyl = () => {
                   type="text"
                   id="firstName"
                   name="firstName"
-                  value={formData.firstName}
+                  value={values.firstName}
                   onChange={handleChange}
                 />
                 <label htmlFor="firstName">First Name</label>
@@ -106,7 +53,7 @@ const WeBuyVinyl = () => {
                   type="text"
                   id="lastName"
                   name="lastName"
-                  value={formData.lastName}
+                  value={values.lastName}
                   onChange={handleChange}
                 />
                 <label htmlFor="lastName">Last Name</label>
@@ -119,7 +66,7 @@ const WeBuyVinyl = () => {
               type="tel"
               id="phone"
               name="phone"
-              value={formData.phone}
+              value={values.phone}
               onChange={handleChange}
             />
           </div>
@@ -132,7 +79,7 @@ const WeBuyVinyl = () => {
                     type="radio"
                     name="recordCount"
                     value={count}
-                    checked={formData.recordCount === count}
+                    checked={values.recordCount === count}
                     onChange={handleChange}
                   />
                   {count}
@@ -172,7 +119,7 @@ const WeBuyVinyl = () => {
             <textarea
               id="damageDescription"
               name="damageDescription"
-              value={formData.damageDescription}
+              value={values.damageDescription}
               onChange={handleChange}
             ></textarea>
           </div>
@@ -182,7 +129,7 @@ const WeBuyVinyl = () => {
             <textarea
               id="collectionDescription"
               name="collectionDescription"
-              value={formData.collectionDescription}
+              value={values.collectionDescription}
               onChange={handleChange}
             ></textarea>
           </div>
@@ -194,7 +141,7 @@ const WeBuyVinyl = () => {
                   type="radio"
                   name="preferredContact"
                   value="Email"
-                  checked={formData.preferredContact === 'Email'}
+                  checked={values.preferredContact === 'Email'}
                   onChange={handleChange}
                 />
                 Email
@@ -204,7 +151,7 @@ const WeBuyVinyl = () => {
                   type="radio"
                   name="preferredContact"
                   value="Phone"
-                  checked={formData.preferredContact === 'Phone'}
+                  checked={values.preferredContact === 'Phone'}
                   onChange={handleChange}
                 />
                 Phone
@@ -217,13 +164,13 @@ const WeBuyVinyl = () => {
             <textarea
               id="bestTimes"
               name="bestTimes"
-              value={formData.bestTimes}
+              value={values.bestTimes}
               onChange={handleChange}
             ></textarea>
           </div>
 
           <button type="submit">Submit</button>
-          {submissionMessage.text && (
+          {submissionMessage && (
             <p className={`submission-message ${submissionMessage.isError ? 'error' : 'success'}`}>
               {submissionMessage.text}
             </p>

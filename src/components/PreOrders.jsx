@@ -71,7 +71,9 @@ const PreOrders = () => {
           ))}
         </div>
       </div>
-      <button>View All Pre-orders</button>
+      <a href="https://shop.lunamusic.net/LUNA-music-pre-orders-s/1821.htm" target="_blank" rel="noopener noreferrer" className="preorder-link">
+        <button>View All Preorders</button>
+      </a>
     </section>
   );
 };
