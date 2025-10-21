@@ -14,7 +14,6 @@ const Footer = () => {
       setMessage('Error input required');
       setIsError(true);
     } else {
-      // In a real app, you would submit the email to a server here.
       setMessage('You have successfully signed up.');
       setIsError(false);
       setEmail(''); 

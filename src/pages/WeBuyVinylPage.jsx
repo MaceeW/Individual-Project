@@ -2,10 +2,12 @@ import '../styles/WeBuyVinyl.css';
 import { useSellVinylForm } from '../hooks/useSellVinylForm';
 
 const WeBuyVinyl = () => {
+  // Use the custom hook to get the form's state and helper functions.
+  // `state` holds all the form values and submission status.
+  // `handleChange` is a function to update the state when an input changes.
+  // `handleSubmit` is a function that runs when the form is submitted.
   const { state, handleChange, handleSubmit } = useSellVinylForm();
   const { values, submissionMessage } = state;
-
-  const isDamaged = values.isDamaged === 'Yes';
 
   return (
     <section className="we-buy-vinyl-section">
@@ -24,6 +26,7 @@ const WeBuyVinyl = () => {
         <h1 className="form-title">Sell us your used vinyl records!</h1>
         <p className="form-description">Get started by filling out the form below.</p>
 
+        {/* The `handleSubmit` function from our custom hook is called when the form is submitted. */}
         <form onSubmit={handleSubmit} className="sell-vinyl-form" noValidate>
           <div className="form-group">
             <label htmlFor="email" className="required">Email</label>
@@ -95,7 +98,7 @@ const WeBuyVinyl = () => {
                   type="radio"
                   name="isDamaged"
                   value="Yes"
-                  checked={isDamaged}
+                  checked={values.isDamaged === 'Yes'}
                   onChange={handleChange}
                 />
                 Yes (please describe below)
@@ -105,7 +108,7 @@ const WeBuyVinyl = () => {
                   type="radio"
                   name="isDamaged"
                   value="No"
-                  checked={!isDamaged}
+                  checked={values.isDamaged === 'No'}
                   onChange={handleChange}
                 />
                 No
@@ -170,6 +173,7 @@ const WeBuyVinyl = () => {
           </div>
 
           <button type="submit">Submit</button>
+          {/* Conditionally render the submission message only when it exists. */}
           {submissionMessage && (
             <p className={`submission-message ${submissionMessage.isError ? 'error' : 'success'}`}>
               {submissionMessage.text}
