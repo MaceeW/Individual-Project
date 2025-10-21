@@ -1,1 +1,0 @@
-import{j as e,L as o}from"./index-BsFoSjc3.js";const n=()=>e.jsxs("div",{style:{textAlign:"center",padding:"50px"},children:[e.jsx("h1",{children:"404 - Page Not Found"}),e.jsx("p",{children:"Sorry, the page you are looking for does not exist."}),e.jsx(o,{to:"/",children:"Go back to the Home Page"})]});export{n as default};
