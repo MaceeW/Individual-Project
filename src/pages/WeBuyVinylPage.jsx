@@ -3,9 +3,6 @@ import { useSellVinylForm } from '../hooks/useSellVinylForm';
 
 const WeBuyVinyl = () => {
   // Use the custom hook to get the form's state and helper functions.
-  // `state` holds all the form values and submission status.
-  // `handleChange` is a function to update the state when an input changes.
-  // `handleSubmit` is a function that runs when the form is submitted.
   const { state, handleChange, handleSubmit } = useSellVinylForm();
   const { values, submissionMessage } = state;
 
