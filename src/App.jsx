@@ -19,7 +19,7 @@ function App() {
       {/* The Navbar component is always displayed at the top of the page for consistent navigation. */}
       <Navbar />
       <div className="main-content">
-        {/* Suspense is used with React.lazy to show a fallback UI (like a loading message)
+        {/* Suspense is used to show a loading message)
             while the lazy-loaded components are being fetched. */}
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
@@ -35,7 +35,6 @@ function App() {
           </Routes>
         </Suspense>
       </div>
-      {/* The Footer component is always displayed at the bottom of the page. */}
       <Footer />
     </>
   );

@@ -26,6 +26,7 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Simple validation: check if any of the required fields are empty.
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.subject || !formData.details) {
       setSubmissionMessage({
         text: 'Error: All required fields must be filled out.',
@@ -35,10 +36,12 @@ const ContactPage = () => {
     }
     console.log('Form submitted:', formData);
 
+    // Provide a success message to the user.
     setSubmissionMessage({
       text: 'You have successfully sent your message.',
       isError: false,
     });
+    // Reset the form fields to their initial empty state for the next submission.
     setFormData({
       firstName: '',
       lastName: '',
